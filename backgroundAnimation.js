@@ -36,7 +36,7 @@ function createSingleHeart() {
 // Continuously spawn hearts
 setInterval(() => {
     // Try to spawn 2 heart every 400ms
-    for(let i = 0; i < 1; i++) {
+    for(let i = 0; i < 2; i++) {
         createSingleHeart();
     }
 }, 100);

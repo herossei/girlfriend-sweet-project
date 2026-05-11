@@ -12,7 +12,7 @@ const images = [
 
 // Limiter
 let Counter = 0;
-const MaxCounter = 500; // Maximum number of images to spawn
+const MaxCounter = 300; // Maximum number of images to spawn
 
 function spawn() {
     images.forEach((image) => {
