@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+#animated_background {
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+
+    background-color: rgb(255, 195, 195);
+}
+
+/* Style for the animated background */
+
+#heartbg {
+    opacity: 0%;
+}
+
+.heartbg {
+    pointer-events: none;
+    /* Disables all click/hover events */
+    user-select: none;
+    /* Prevents text selection */
+    height: auto;
+    position: fixed;
+    width: 100px;
+    background-color: transparent;
+    object-fit: contain;
+    z-index: 1;
+    transform-origin: left center;
+}
+
+.animate {
+
+    animation-name: moveRandom;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes moveRandom {
+    to {
+        /* These variables will be set by JavaScript */
+        transform: translate(var(--move-x), var(--move-y)) scale(0.1);
+        opacity: 0%;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* Style for the menu */
+#Menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 10;
+
+    background-color: #f99efc34;
+
+    position: fixed;
+
+    height: 70%;
+    max-height: 90vh;
+    max-width: 90vw;
+    aspect-ratio: 6 / 8;
+
+    margin-top: 13vh;
+    padding: 0px;
+
+    border-radius: 25px;
+    border: solid;
+    border-color: #fdc7ff;
+
+    box-shadow: 0px 0px 20px 10px rgba(253, 192, 255, 0.788);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#top-text {
+    font-size: 3.2em;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #ff74d5;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+    width: 100%;
+    text-align: center;
+
+    margin: 0px;
+    margin-bottom: 5vh;
+}
+
+#tophalf {
+    margin-bottom: 15px;
+    height: 50%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Buttons {
+    border: solid;
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    /* Changes mouse to a hand */
+
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+.Buttons:hover {
+    box-shadow: 0 0px 20px rgb(255, 232, 252);
+    /* Adds a soft pink glow */
+    filter: brightness(1.05);
+    /* Makes it slightly brighter */
+}
+
+#MemoryLane {
+    border-color: #fdc7ff;
+    background-color: #f99efc;
+
+    background-image: url("Images/MemoryLane.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Keeps it dead center */
+    background-size: cover;
+    /* Scales image to fit inside without cropping */
+
+    color: #fa5dff;
+    font-size: 2em;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#Quiz {
+    border-color: #fdc7ff;
+    background-color: #f99efc;
+
+    background-image: url("Images/Quiz.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Keeps it dead center */
+    background-size: cover;
+    /* Scales image to fit inside without cropping */
+
+    color: #fa5dff;
+    font-size: 2em;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+    margin-right: 10px;
+}
+
+#bottomhalf {
+    margin-bottom: 10vh;
+    height: 50%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Letters {
+    border-color: #fdc7ff;
+    background-color: #f99efc;
+
+    background-image: url("Images/Letters.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Keeps it dead center */
+    background-size: cover;
+    /* Scales image to fit inside without cropping */
+
+    color: #fa5dff;
+    font-size: 2em;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#Secret {
+    border-color: #fdc7ff;
+    background-color: #f99efc;
+
+    background-image: url("Images/Secret.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Keeps it dead center */
+    background-size: cover;
+    /* Scales image to fit inside without cropping */
+
+    color: #fa5dff;
+    font-size: 2em;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+    margin-right: 10px;
+}
