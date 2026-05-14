@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="bg">
+
+    </div>
+
+    <div id="Main">
+        <p id="QNumber">Question No. 1</p>
+        <div id="Question">When was our last date where we went home to fuck and make out?</div>
+        <div id="Options">
+            <button class="Choices">Option 1</button>
+            <button class="Choices">Option 2</button>
+            <button class="Choices">Option 3</button>
+            <button class="Choices">Option 4</button>
+        </div>
+    </div>
+
+    <div id="Modal" class="hide">
+        <p>2nd Passcode: 4</p>
+        <button onclick="Goback()">Go back to Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function Goback() {
+            window.location.href = "../../index.html"
+        }
+    </script>
+</body>
+
+</html>
