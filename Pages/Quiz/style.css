@@ -150,7 +150,22 @@ body {
     justify-self: center;
     top: 20%;
     
-    background-color: #e8d6e9;
+    background-color: #cfa4d1;
+
+    color: rgb(170, 65, 156);
+    font-size: 1.2rem;
+}
+
+#Gobackbutton {
+    height: auto;
+    width: 30%;
+    background-color: #fdc7ff;
+    border: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    color: #da4ddf;
+
+    font-size: large;
 }
 
 .hide {
