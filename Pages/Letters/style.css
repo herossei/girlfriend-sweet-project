@@ -34,15 +34,16 @@ body {
 
 @keyframes LightsonLightsoff {
     0% {
-        box-shadow: 0px 0px 10px 2px #ff1180;
+        box-shadow: 0px 0px 5px 2px #ffd8ea;
     }
 
     50% {
-        box-shadow: 0px 0px 10px 2px #ff00dd;
+        box-shadow: 0px 0px 7px 6px #ffd8ea;
     }
 
     100% {
-        box-shadow: 0px 0px 10px 2px #e100ff;
+        box-shadow: 0px 0px 10px 10px #ffd8ea;
+
     }
 }
 
