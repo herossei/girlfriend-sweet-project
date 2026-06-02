@@ -15,14 +15,27 @@ const Questions = {
         question: "When's our anniversary?",
         options: ["April 15", "October 7", "January 15", "November 29"],
         correct: "April 15",
+    },
+
+    4: {
+        question: "If I was an animal what would I be?",
+        options: ["Dog", "Cat", "Bird", "Fish"],
+        correct: "Bird",
+    },
+
+    5: {
+        question: "What's my favorite color?",
+        options: ["Forest Green", "Sage Green", "Black", "White"],
+        correct: "Sage Green",
     }
+
 };
 
 const QNumber = document.getElementById("QNumber");
 const Question = document.getElementById("Question");
 const Modal = document.getElementById("Modal");
 
-const MaxQuestions = 3;
+const MaxQuestions = 5;
 let CurrentQuestion = 1;
 
 function LoadQuestion(QuestionNumber) {

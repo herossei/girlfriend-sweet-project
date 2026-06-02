@@ -10,34 +10,60 @@ const images = [
     "Designs/random_designs_1.jpg",
 ];
 
-// Limiter
+// Keep track of total spawned images across calls
 let Counter = 0;
-const MaxCounter = 300; // Maximum number of images to spawn
+const MaxCounter = 300; 
 
-function spawn() {
-    images.forEach((image) => {
-        if (Counter >= MaxCounter) return; // Stop spawning if we've reached the limit
+// Pass the desired amount into the function
+function spawn(amountToSpawn) {
+    amountToSpawn = amountToSpawn || 1; // Default to 5 if no argument is provided
+    for (let i = 0; i < amountToSpawn; i++) {
+        if (Counter >= MaxCounter) {
+            console.log("Max limit reached!");
+            break; 
+        }
         Counter++;
 
-        const imgTemplate = document.createElement('img');
+        // Pick a random image from the array
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const randomImageSrc = images[randomIndex];
 
-        // 2. Set the source (make sure this path leads to your folder)
-        imgTemplate.src = image;
+        const img = document.createElement('img');
+        img.src = randomImageSrc;
 
-        const img = imgTemplate.cloneNode(); // Clone the template for each image
-
-        // 1. Random Position
+        // Random Position
         const initX = Math.random() * window.innerWidth;
         const initY = Math.random() * window.innerHeight;
         img.style.left = initX + 'px';
         img.style.top = initY + 'px';
 
-        img.classList.add('bg-image'); // Add a class for styling
+        img.classList.add('bg-image'); 
 
         bgElement.appendChild(img);
-    });
-};
+    }
+}
 
-setInterval(spawn, 100); // Spawn new images every 5 seconds
+const StartButton = document.getElementById("Start-Button");
+
+const BookElement = document.getElementById("Book");
+const LoadingScreen = document.getElementById("Loading-Screen");
+const MusicElement = document.getElementById("Music");
+MusicElement.volume = 0.4;
+
+StartButton.addEventListener("click", () => {
+    MusicElement.play(); // Start the music
+    setInterval(spawn, 50); // Spawn new images every 5 seconds
+
+    // Show the book and hide the loading screen
+    LoadingScreen.classList.add("fade-out");
+    
+    LoadingScreen.addEventListener("animationend", () => {
+        LoadingScreen.classList.add("hide");
+        BookElement.classList.add("show");
+        BookElement.classList.add("fade-in");
+    });
+});
+
+
 
 

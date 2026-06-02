@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(255, 160, 255);
+    background-color: rgb(197, 131, 223);
 
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body {
 
     z-index: 10;
 
-    background-color: #fc8cc0;
+    background-color: #ef8cfc8c;
 
     position: fixed;
 
@@ -29,25 +29,14 @@ body {
     padding: 0px;
 
     border-radius: 25px;
-    animation: LightsonLightsoff linear 1s alternate-reverse infinite
+    box-shadow: 5px 4px 1px 2px #d874ff8a;
+
+    backdrop-filter: blur(10px);
 }
 
-@keyframes LightsonLightsoff {
-    0% {
-        box-shadow: 0px 0px 5px 2px #ffd8ea;
-    }
-
-    50% {
-        box-shadow: 0px 0px 7px 6px #ffd8ea;
-    }
-
-    100% {
-        box-shadow: 0px 0px 10px 10px #ffd8ea;
-
-    }
-}
 
 .Letter-Container {
+    user-select: none;
     align-content: center;
     text-align: center;
     position: relative;
@@ -76,13 +65,11 @@ body {
 
 @keyframes popUp {
     from {
-        opacity: 50%;
-        scale: 0;
+        opacity: 0%;
     }
 
     to {
         opacity: 100%;
-        scale: 1;
     }
 }
 
@@ -105,10 +92,14 @@ body {
 
     position: fixed;
 
-    height: 90%;
-    max-height: 90vh;
-    max-width: 90vw;
-    aspect-ratio: 6 / 8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    height: auto;
+    max-height: 70vh;
+    max-width: 300px;
 
     margin-top: 2vh;
     padding: 0px;
@@ -117,12 +108,13 @@ body {
 
     animation: popUp normal 0.4s ease;
 
-    box-shadow: 0px 0px 5px 2px #92718b;
+    box-shadow: 0px 0px 5px 2px #ffedfba9;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    container-type: inline-size;
 }
 
 #Close-Button {
@@ -134,6 +126,7 @@ body {
 
     cursor: pointer;
     color: #92718b;
+    user-select: none;
 }
 
 #Close-Button:hover {
@@ -150,12 +143,52 @@ body {
 }
 
 #letter-content {
-    color:#92718b ;
-    font-size: clamp(10px, 20vw, 30px);
+    user-select: none;
+    color:#e100ff9a ;
+    text-shadow: 0px 0px 5px #fffdff;
+    font-size: 5cqw;
+    overflow: auto;
+    scrollbar-width: none;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 
     text-align: justify;
 
     margin: 20px;
+}
+
+#letter-content::-webkit-scrollbar {
+  display: none; /* Hides it in Chrome, Safari, and Edge */
+}
+
+/*Background rain*/
+
+#ImageRain {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+    user-select: none;
+}
+
+.rain-image {
+    position: absolute;
+    top: -150px;
+
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    from {
+        transform: translate(0, 0) rotate(0deg);
+        
+    }
+
+    to {
+        transform: translate(
+            var(--drift),
+            calc(100vh + 200px)
+        ) rotate(360deg);
+    }
 }

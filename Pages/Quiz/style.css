@@ -98,8 +98,8 @@ body {
 }
 
 #Options {
-    height: 50%;
-    width: 90%;
+    height: 30%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -119,8 +119,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    border: solid;
-    border-radius: 25px;
+    border: none;
+    border-radius: 50cqw;
 
     margin: 10px;
 
